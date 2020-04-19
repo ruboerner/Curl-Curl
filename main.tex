@@ -1,0 +1,64 @@
+
+\documentclass[fleqn,aspectratio=169]{beamer}
+\let\Tiny=\tiny
+\usepackage[ngerman]{babel}
+\usepackage[]{amsmath,amssymb,esdiff,esint}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage[scale=2]{ccicons}
+
+\usetheme[%%
+progressbar=frametitle,%%
+numbering=none]{metropolis}
+
+\begin{document}
+
+\begin{frame}{Herleitung Rot-Rot-Gleichung}
+    Ziel:
+    
+    \begin{itemize}
+        \item Elimination einer der beiden Feldgrößen in Maxwellgleichung
+        \item Aufstellen einer partiellen Differentialgleichung zweiter Ordnung
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Herleitung Rot-Rot-Gleichung}
+    \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+    \begin{equation*}
+        \only<1>{\curl \vb{e} + \pdv{\vb{b}}{t} = \vb{0}}
+        \only<2>{\curl \curl \vb{e} + \curl \pdv{\vb{b}}{t} = \vb{0}}
+        \only<3>{\curl \curl \vb{e} + \curl \pdv{\textcolor{blue}{\vb{b}}}{t} = \vb{0}}
+        \only<4>{\curl \curl \vb{e} +  \pdv{t}\curl \mu \vb{h} = \vb{0}}
+        \only<5>{\curl \curl \vb{e} +  \pdv{t} \mu \curl \vb{h} = \vb{0}}
+        \only<6>{\curl \curl \vb{e} +  \mu \pdv{t} \curl \vb{h} = \vb{0}}
+        \only<7>{\curl \curl \vb{e} +  \mu \pdv{t} \textcolor{blue}{\curl \vb{h}} = \vb{0}}
+        \only<8>{\curl \curl \vb{e} +  \mu \pdv{t}
+        \left(\textcolor{blue}{\vb{j} + \pdv{\vb{d}}{t}}\right) = \vb{0}}
+        \only<9>{\curl \curl \vb{e} +  \mu \pdv{t}
+        \left(\sigma \vb{e} + \pdv{t} \varepsilon \vb{e}\right) = \vb{0}}
+        \only<10>{\curl \curl \vb{e} +  \mu \pdv{t}
+        \left(\sigma \vb{e} + \varepsilon \pdv{t}  \vb{e}\right) = \vb{0}}
+        \only<11>{\curl \curl \vb{e} +  \mu\sigma \pdv{\vb{e}}{t}
+        + \mu \varepsilon \pdv[2]{\vb{e}}{t}   = \vb{0}}
+    \end{equation*}
+    \end{column}
+    \quad
+    \begin{column}{0.44\textwidth}
+    \only<1>{Faradaysches Induktionsgesetz}
+    \only<2>{Rotation}
+    \only<3>{Materialgleichung $\vb{b} = \mu \vb{h}$}
+    \only<4>{\par Vertauschen der Reihenfolge von Rotation und zeitlicher Ableitung}
+    \only<5>{$\mu$ homogen}
+    \only<6>{$\mu$ zeitunabhängig}
+    \only<7>{\par Elimination von $\vb{h}$}
+    \only<8>{\par Amperesches Durchflutungsgesetz $\curl \vb{h} = \vb{j} + \pdv{\vb{d}}{t}$}
+    \only<9>{\par Ohmsches Gesetz $\vb{j} = \sigma \vb{e}$ \\ Materialgleichung $\vb{d} = \varepsilon \vb{e}$}
+    \only<10>{\par $\sigma$ und $\varepsilon$ zeitunabhängig}
+    \only<11>{\par Partielle Differentialgleichung zweiter Ordnung für $\vb{e}$}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}
