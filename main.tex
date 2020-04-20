@@ -1,4 +1,4 @@
-
+%!TEX TS-program = xelatex
 \documentclass[fleqn,aspectratio=169]{beamer}
 \let\Tiny=\tiny
 \usepackage[ngerman]{babel}
@@ -10,18 +10,27 @@
 \usetheme[%%
 progressbar=frametitle,%%
 numbering=none]{metropolis}
-
+% \setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}
+% \setmonofont{Fira Mono}
 % \setsansfont[BoldFont={FiraSans-Bold.ttf}]{FiraSans-Light.ttf}
 % \setmonofont{FiraMono-Regular.ttf}
+
+\setsansfont[BoldFont={FiraSans-Bold.ttf}]{FiraSans-Light.ttf}
+\setmonofont{FiraMono-Regular.ttf}
 
 \begin{document}
 
 \begin{frame}{Herleitung Rot-Rot-Gleichung}
     Ziel:
-    
     \begin{itemize}
         \item Elimination einer der beiden Feldgrößen in Maxwellgleichung
         \item Aufstellen einer partiellen Differentialgleichung zweiter Ordnung
+    \end{itemize}
+
+    Hilfsmittel:
+    \begin{itemize}
+        \item Rotation
+        \item Homogenität und Stationarität der Materialparameter
     \end{itemize}
     
 \end{frame}
@@ -61,6 +70,44 @@ numbering=none]{metropolis}
     \only<10>{\par $\sigma$ und $\varepsilon$ zeitunabhängig}
     \only<11>{\par Partielle Differentialgleichung zweiter Ordnung für $\vb{e}$}
     \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Zerfall freier Ladungen}
+Ziel:
+\begin{itemize}
+    \item Begründung für Quellfreiheit des elektrischen Feldes in homogenen Medien
+    \item ODE für Ladungsträgerdichte
+    \item Abschätzung der Zeitabhängigkeit der Ladungsträgerdichte
+\end{itemize}
+Hilfsmittel:
+    \begin{itemize}
+        \item Divergenz
+        \item Vektoridentitäten für Ableitungen
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Zerfall freier Ladungen}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \only<1>{
+                \begin{equation*}
+                    \curl \vb{h} - \pdv{\vb{d}}{t} = \vb{j}    
+                \end{equation*}
+                }
+            \only<2>{
+                    \begin{equation*}
+                        \div \curl \vb{h} - \div \pdv{\vb{d}}{t} = \div \vb{j}    
+                    \end{equation*}
+                }    
+        \end{column}
+        \quad
+        \begin{column}{0.44\textwidth}
+            \only<1>{\par Amperesches Durchflutungsgesetz}
+            \only<2>{Divergenz}
+            \only<3>{\par Vertauschen der Ableitungen, $\div \curl (\cdot) = 0$}
+        \end{column}
     \end{columns}
 \end{frame}
 
