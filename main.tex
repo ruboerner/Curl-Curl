@@ -5,18 +5,14 @@
 \usepackage[]{amsmath,amssymb,esdiff,esint}
 \usepackage{physics}
 \usepackage{graphicx}
+\usepackage{lmodern}
 \usepackage[scale=2]{ccicons}
 
 \usetheme[%%
 progressbar=frametitle,%%
 numbering=none]{metropolis}
-% \setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}
-% \setmonofont{Fira Mono}
-% \setsansfont[BoldFont={FiraSans-Bold.ttf}]{FiraSans-Light.ttf}
-% \setmonofont{FiraMono-Regular.ttf}
-
-\setsansfont[BoldFont={FiraSans-Bold.ttf}]{FiraSans-Light.ttf}
-\setmonofont{FiraMono-Regular.ttf}
+\setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}
+\setmonofont{Fira Mono}
 
 \begin{document}
 
@@ -101,14 +97,60 @@ Hilfsmittel:
                         \div \curl \vb{h} - \div \pdv{\vb{d}}{t} = \div \vb{j}    
                     \end{equation*}
                 }    
+            \only<3>{
+                    \begin{equation*}
+                        - \pdv{t} \div \vb{d} = \div \vb{j}    
+                    \end{equation*}
+                }    
+                \only<4>{
+                    \begin{equation*}
+                        - \pdv{\rho_E}{t}  = \div \left(\sigma \vb{e}\right)    
+                    \end{equation*}
+                }    
+                \only<5>{
+                    \begin{equation*}
+                        - \pdv{\rho_E}{t}  = \sigma \div  \vb{e}    
+                    \end{equation*}
+                }    
+                \only<6>{
+                    \begin{equation*}
+                        - \pdv{\rho_E}{t}  = \sigma \frac{\rho_E}{\varepsilon}    
+                    \end{equation*}
+                }    
+                \only<7>{
+                    \begin{equation*}
+                        \pdv{t}\rho_E  +  \frac{\sigma}{\varepsilon} \rho_E = 0  
+                    \end{equation*}
+                }
+                \only<8>{
+                    \begin{equation*}
+                        \rho_E(t)  =
+                        \rho_E(0)
+                        e^{-\dfrac{\sigma}{\varepsilon} t}  
+                    \end{equation*}
+                }
         \end{column}
         \quad
         \begin{column}{0.44\textwidth}
             \only<1>{\par Amperesches Durchflutungsgesetz}
             \only<2>{Divergenz}
             \only<3>{\par Vertauschen der Ableitungen, $\div \curl (\cdot) = 0$}
+            \only<4>{\par Ohmsches Gesetz, Materialgleichung}
+            \only<5>{Homogenes Medium}
+            \only<6>{\par Gaußsches Gesetz für elektrische Felder}
+            \only<7>{\par Gewöhnliche Differentialgleichung für $\rho_E(t)$}
+            \only<8>{Ansatz}
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}{Zerfall freier Ladungen}
+Frage: Wann gilt
+\begin{equation*}
+    \dfrac{\rho_E(t)}{\rho_E(0)} \ll 1,
+\end{equation*}
+    wenn $\varepsilon = \varepsilon_0$ und 
+    $\sigma > 10^{-4}$ S/m?
 \end{frame}
 
 \end{document}
