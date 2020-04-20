@@ -1,4 +1,4 @@
-%!TEX TS-program = xelatex
+%!TEX TS-program = lualatex
 \documentclass[fleqn,aspectratio=169]{beamer}
 \let\Tiny=\tiny
 \usepackage[ngerman]{babel}
@@ -28,55 +28,55 @@ numbering=none]{metropolis}
         \item Rotation
         \item Homogenität und Stationarität der Materialparameter
     \end{itemize}
-    
+
 \end{frame}
 
 \begin{frame}{Herleitung Rot-Rot-Gleichung}
     \begin{columns}[c]
-    \begin{column}{0.5\textwidth}
-    \begin{equation*}
-        \only<1>{\curl \vb{e} + \pdv{\vb{b}}{t} = \vb{0}}
-        \only<2>{\curl \curl \vb{e} + \curl \pdv{\vb{b}}{t} = \vb{0}}
-        \only<3>{\curl \curl \vb{e} + \curl \pdv{\textcolor{blue}{\vb{b}}}{t} = \vb{0}}
-        \only<4>{\curl \curl \vb{e} +  \pdv{t}\curl \mu \vb{h} = \vb{0}}
-        \only<5>{\curl \curl \vb{e} +  \pdv{t} \mu \curl \vb{h} = \vb{0}}
-        \only<6>{\curl \curl \vb{e} +  \mu \pdv{t} \curl \vb{h} = \vb{0}}
-        \only<7>{\curl \curl \vb{e} +  \mu \pdv{t} \textcolor{blue}{\curl \vb{h}} = \vb{0}}
-        \only<8>{\curl \curl \vb{e} +  \mu \pdv{t}
-        \left(\textcolor{blue}{\vb{j} + \pdv{\vb{d}}{t}}\right) = \vb{0}}
-        \only<9>{\curl \curl \vb{e} +  \mu \pdv{t}
-        \left(\sigma \vb{e} + \pdv{t} \varepsilon \vb{e}\right) = \vb{0}}
-        \only<10>{\curl \curl \vb{e} +  \mu \pdv{t}
-        \left(\sigma \vb{e} + \varepsilon \pdv{t}  \vb{e}\right) = \vb{0}}
-        \only<11>{\curl \curl \vb{e} +  \mu\sigma \pdv{\vb{e}}{t}
-        + \mu \varepsilon \pdv[2]{\vb{e}}{t}   = \vb{0}}
-    \end{equation*}
-    \end{column}
-    \quad
-    \begin{column}{0.44\textwidth}
-    \only<1>{Faradaysches Induktionsgesetz}
-    \only<2>{Rotation}
-    \only<3>{Materialgleichung $\vb{b} = \mu \vb{h}$}
-    \only<4>{\par Vertauschen der Reihenfolge von Rotation und zeitlicher Ableitung}
-    \only<5>{$\mu$ homogen}
-    \only<6>{$\mu$ zeitunabhängig}
-    \only<7>{\par Elimination von $\vb{h}$}
-    \only<8>{\par Amperesches Durchflutungsgesetz $\curl \vb{h} = \vb{j} + \pdv{\vb{d}}{t}$}
-    \only<9>{\par Ohmsches Gesetz $\vb{j} = \sigma \vb{e}$ \\ Materialgleichung $\vb{d} = \varepsilon \vb{e}$}
-    \only<10>{\par $\sigma$ und $\varepsilon$ zeitunabhängig}
-    \only<11>{\par Partielle Differentialgleichung zweiter Ordnung für $\vb{e}$}
-    \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{equation*}
+                \only<1>{\curl \vb{e} + \pdv{\vb{b}}{t} = \vb{0}}
+                \only<2>{\curl \curl \vb{e} + \curl \pdv{\vb{b}}{t} = \vb{0}}
+                \only<3>{\curl \curl \vb{e} + \curl \pdv{\textcolor{blue}{\vb{b}}}{t} = \vb{0}}
+                \only<4>{\curl \curl \vb{e} +  \pdv{t}\curl \mu \vb{h} = \vb{0}}
+                \only<5>{\curl \curl \vb{e} +  \pdv{t} \mu \curl \vb{h} = \vb{0}}
+                \only<6>{\curl \curl \vb{e} +  \mu \pdv{t} \curl \vb{h} = \vb{0}}
+                \only<7>{\curl \curl \vb{e} +  \mu \pdv{t} \textcolor{blue}{\curl \vb{h}} = \vb{0}}
+                \only<8>{\curl \curl \vb{e} +  \mu \pdv{t}
+                    \left(\textcolor{blue}{\vb{j} + \pdv{\vb{d}}{t}}\right) = \vb{0}}
+                \only<9>{\curl \curl \vb{e} +  \mu \pdv{t}
+                    \left(\sigma \vb{e} + \pdv{t} \varepsilon \vb{e}\right) = \vb{0}}
+                \only<10>{\curl \curl \vb{e} +  \mu \pdv{t}
+                    \left(\sigma \vb{e} + \varepsilon \pdv{t}  \vb{e}\right) = \vb{0}}
+                \only<11>{\curl \curl \vb{e} +  \mu\sigma \pdv{\vb{e}}{t}
+                    + \mu \varepsilon \pdv[2]{\vb{e}}{t}   = \vb{0}}
+            \end{equation*}
+        \end{column}
+        \quad
+        \begin{column}{0.44\textwidth}
+            \only<1>{Faradaysches Induktionsgesetz}
+            \only<2>{Rotation}
+            \only<3>{Materialgleichung $\vb{b} = \mu \vb{h}$}
+            \only<4>{\par Vertauschen der Reihenfolge von Rotation und zeitlicher Ableitung}
+            \only<5>{$\mu$ homogen}
+            \only<6>{$\mu$ zeitunabhängig}
+            \only<7>{\par Elimination von $\vb{h}$}
+            \only<8>{\par Amperesches Durchflutungsgesetz $\curl \vb{h} = \vb{j} + \pdv{\vb{d}}{t}$}
+            \only<9>{\par Ohmsches Gesetz $\vb{j} = \sigma \vb{e}$ \\ Materialgleichung $\vb{d} = \varepsilon \vb{e}$}
+            \only<10>{\par $\sigma$ und $\varepsilon$ zeitunabhängig}
+            \only<11>{\par Partielle Differentialgleichung zweiter Ordnung für $\vb{e}$}
+        \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}{Zerfall freier Ladungen}
-Ziel:
-\begin{itemize}
-    \item Begründung für Quellfreiheit des elektrischen Feldes in homogenen Medien
-    \item ODE für Ladungsträgerdichte
-    \item Abschätzung der Zeitabhängigkeit der Ladungsträgerdichte
-\end{itemize}
-Hilfsmittel:
+    Ziel:
+    \begin{itemize}
+        \item Begründung für Quellfreiheit des elektrischen Feldes in homogen leitfähigen Medien
+        \item Herleitung einer gewöhnlichen Differentialgleichung für die elektrische Ladungsträgerdichte $\rho_E(t)$
+        \item Abschätzung der Zeitabhängigkeit der Ladungsträgerdichte
+    \end{itemize}
+    Hilfsmittel:
     \begin{itemize}
         \item Divergenz
         \item Vektoridentitäten für Ableitungen
@@ -89,46 +89,46 @@ Hilfsmittel:
         \begin{column}{0.5\textwidth}
             \only<1>{
                 \begin{equation*}
-                    \curl \vb{h} - \pdv{\vb{d}}{t} = \vb{j}    
+                    \curl \vb{h} - \pdv{\vb{d}}{t} = \vb{j}
                 \end{equation*}
-                }
+            }
             \only<2>{
-                    \begin{equation*}
-                        \div \curl \vb{h} - \div \pdv{\vb{d}}{t} = \div \vb{j}    
-                    \end{equation*}
-                }    
+                \begin{equation*}
+                    \div \curl \vb{h} - \div \pdv{\vb{d}}{t} = \div \vb{j}
+                \end{equation*}
+            }
             \only<3>{
-                    \begin{equation*}
-                        - \pdv{t} \div \vb{d} = \div \vb{j}    
-                    \end{equation*}
-                }    
-                \only<4>{
-                    \begin{equation*}
-                        - \pdv{\rho_E}{t}  = \div \left(\sigma \vb{e}\right)    
-                    \end{equation*}
-                }    
-                \only<5>{
-                    \begin{equation*}
-                        - \pdv{\rho_E}{t}  = \sigma \div  \vb{e}    
-                    \end{equation*}
-                }    
-                \only<6>{
-                    \begin{equation*}
-                        - \pdv{\rho_E}{t}  = \sigma \frac{\rho_E}{\varepsilon}    
-                    \end{equation*}
-                }    
-                \only<7>{
-                    \begin{equation*}
-                        \pdv{t}\rho_E  +  \frac{\sigma}{\varepsilon} \rho_E = 0  
-                    \end{equation*}
-                }
-                \only<8>{
-                    \begin{equation*}
-                        \rho_E(t)  =
-                        \rho_E(0)
-                        e^{-\dfrac{\sigma}{\varepsilon} t}  
-                    \end{equation*}
-                }
+                \begin{equation*}
+                    - \pdv{t} \div \vb{d} = \div \vb{j}
+                \end{equation*}
+            }
+            \only<4>{
+                \begin{equation*}
+                    - \pdv{\rho_E}{t}  = \div \left(\sigma \vb{e}\right)
+                \end{equation*}
+            }
+            \only<5>{
+                \begin{equation*}
+                    - \pdv{\rho_E}{t}  = \sigma \div  \vb{e}
+                \end{equation*}
+            }
+            \only<6>{
+                \begin{equation*}
+                    - \pdv{\rho_E}{t}  = \sigma \frac{\rho_E}{\varepsilon}
+                \end{equation*}
+            }
+            \only<7>{
+                \begin{equation*}
+                    \pdv{t}\rho_E  +  \frac{\sigma}{\varepsilon} \rho_E = 0
+                \end{equation*}
+            }
+            \only<8>{
+                \begin{equation*}
+                    \rho_E(t)  =
+                    \rho_E(0)
+                    e^{-\dfrac{\sigma}{\varepsilon} t}
+                \end{equation*}
+            }
         \end{column}
         \quad
         \begin{column}{0.44\textwidth}
@@ -145,11 +145,11 @@ Hilfsmittel:
 \end{frame}
 
 \begin{frame}{Zerfall freier Ladungen}
-Frage: Wann gilt
-\begin{equation*}
-    \dfrac{\rho_E(t)}{\rho_E(0)} \ll 1,
-\end{equation*}
-    wenn $\varepsilon = \varepsilon_0$ und 
+    Frage: Wann gilt
+    \begin{equation*}
+        \dfrac{\rho_E(t)}{\rho_E(0)} \ll 1,
+    \end{equation*}
+    wenn $\varepsilon = \varepsilon_0$ und
     $\sigma > 10^{-4}$ S/m?
 \end{frame}
 
