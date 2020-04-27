@@ -1,5 +1,5 @@
 %!TEX TS-program = lualatex
-\documentclass[fleqn,aspectratio=169]{beamer}
+\documentclass[fleqn,aspectratio=43]{beamer}
 \let\Tiny=\tiny
 \usepackage[ngerman]{babel}
 \usepackage[]{amsmath,amssymb,esdiff,esint}
@@ -8,12 +8,15 @@
 \usepackage{lmodern}
 \usepackage[scale=2]{ccicons}
 
+\definecolor{myblue}{rgb}{0.0,0.3921,0.6588}
+
 \usetheme[%%
-progressbar=frametitle,%%
+progressbar=none,%%
 numbering=none]{metropolis}
 \setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}
 \setmonofont{Fira Mono}
-
+\setbeamercolor{frametitle}{bg=myblue}
+\setbeamercovered{transparent}
 \begin{document}
 
 \begin{frame}{Herleitung Rot-Rot-Gleichung}
@@ -52,19 +55,21 @@ numbering=none]{metropolis}
                     + \mu \varepsilon \pdv[2]{\vb{e}}{t}   = \vb{0}}
             \end{equation*}
         \end{column}
+
         \quad
-        \begin{column}{0.44\textwidth}
-            \only<1>{Faradaysches Induktionsgesetz}
-            \only<2>{Rotation}
-            \only<3>{Materialgleichung $\vb{b} = \mu \vb{h}$}
+
+        \begin{column}{0.3\textwidth}
+            \only<1>{\par Faradaysches Induktionsgesetz}
+            \only<2>{\par Rotation}
+            \only<3>{\par Materialgleichung $\vb{b} = \mu \vb{h}$}
             \only<4>{\par Vertauschen der Reihenfolge von Rotation und zeitlicher Ableitung}
-            \only<5>{$\mu$ homogen}
-            \only<6>{$\mu$ zeitunabhängig}
+            \only<5>{\par $\mu$ homogen}
+            \only<6>{\par $\mu$ zeitunabhängig}
             \only<7>{\par Elimination von $\vb{h}$}
-            \only<8>{\par Amperesches Durchflutungsgesetz $\curl \vb{h} = \vb{j} + \pdv{\vb{d}}{t}$}
-            \only<9>{\par Ohmsches Gesetz $\vb{j} = \sigma \vb{e}$ \\ Materialgleichung $\vb{d} = \varepsilon \vb{e}$}
+            \only<8>{\par Amperesches \\ Durchflutungs\-gesetz \\ $\curl \vb{h} = \vb{j} + \pdv{\vb{d}}{t}$}
+            \only<9>{\par Ohmsches Gesetz \\ $\vb{j} = \sigma \vb{e}$ \\ Materialgleichung \\ $\vb{d} = \varepsilon \vb{e}$}
             \only<10>{\par $\sigma$ und $\varepsilon$ zeitunabhängig}
-            \only<11>{\par Partielle Differentialgleichung zweiter Ordnung für $\vb{e}$}
+            \only<11>{\par Partielle \\ Differential\-gleichung zweiter Ordnung für $\vb{e}$}
         \end{column}
     \end{columns}
 \end{frame}
@@ -74,7 +79,7 @@ numbering=none]{metropolis}
     \begin{itemize}
         \item Begründung für Quellfreiheit des elektrischen Feldes in homogen leitfähigen Medien
         \item Herleitung einer gewöhnlichen Differentialgleichung für die elektrische Ladungsträgerdichte $\rho_E(t)$
-        \item Abschätzung der Zeitabhängigkeit der Ladungsträgerdichte
+        \item Abschätzung der Zeitabhängigkeit der Ladungsträger\-dichte
     \end{itemize}
     Hilfsmittel:
     \begin{itemize}
@@ -131,14 +136,15 @@ numbering=none]{metropolis}
             }
         \end{column}
         \quad
-        \begin{column}{0.44\textwidth}
-            \only<1>{\par Amperesches Durchflutungsgesetz}
+        \begin{column}{0.3\textwidth}
+            \only<1>{\par Amperesches \\ Durchflutungs\-gesetz}
             \only<2>{Divergenz}
             \only<3>{\par Vertauschen der Ableitungen, $\div \curl (\cdot) = 0$}
-            \only<4>{\par Ohmsches Gesetz, Materialgleichung}
-            \only<5>{Homogenes Medium}
+            \only<4>{\par Ohmsches Gesetz, \\
+                Gaußsches Gesetz für elektrische Felder}
+            \only<5>{\par Homogenes Medium}
             \only<6>{\par Gaußsches Gesetz für elektrische Felder}
-            \only<7>{\par Gewöhnliche Differentialgleichung für $\rho_E(t)$}
+            \only<7>{\par Gewöhnliche \\ Differential\-gleichung für $\rho_E(t)$}
             \only<8>{Ansatz}
         \end{column}
     \end{columns}
@@ -151,6 +157,121 @@ numbering=none]{metropolis}
     \end{equation*}
     wenn $\varepsilon = \varepsilon_0$ und
     $\sigma > 10^{-4}$ S/m?
+\end{frame}
+
+\setbeamercolor{background canvas}{bg=myblue}
+\begin{frame}
+    % \frametitle{Wurzeln von $k^2$}
+    \textcolor{white}{\LARGE Die Quadratwurzeln von $k^2$}
+
+\end{frame}
+
+\setbeamercolor{background canvas}{bg=white}
+
+\begin{frame}{Wurzeln von $k^2$}
+\uncover<1->{    Ausgangspunkt: Helmholtzgleichung $\nabla^2 \vb{E} + k^2 \vb{E} = 0$ mit der Lösung
+    $$
+        \vb{E}(z) = \vb{E}(0) e^{- i k z} , \quad z \ge 0.
+    $$
+    Problem: $k = \textcolor{red}{\pm} \sqrt{-i \omega \mu \sigma}$
+}
+
+\uncover<2->{    Ziel: Auswahl der Wurzel so, dass
+    \begin{itemize}
+        \item die Felder $\vb{E}$, $\vb{B}$ usw. für $z \to +\infty$ verschwinden
+        \item die Ausbreitungsgeschwindigkeit die physikalisch korrekte Richtung (\glqq nach unten laufende Welle\grqq, \glqq in positive z-Richtung laufende Welle\grqq) besitzt.
+    \end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Wurzeln von $k^2$}
+    \uncover<1->{Bekannt: \textcolor<2>{red}{$k^2 = -i \omega \mu \sigma$} (quasistationäre Näherung)
+
+    Wir machen Ansatz: $k^2 = (\alpha - i\beta)^2 = \textcolor<3>{blue}{\alpha^2} \textcolor<3>{red}{- 2 i \alpha \beta} \textcolor<3>{blue}{- \beta^2}$.}
+
+    \uncover<2->{Da $k^2$ \textcolor<2>{red}{rein imaginär} ist, muss $\alpha^2 - \beta^2 = 0$ sein.}
+
+    \uncover<3->{Wir zerlegen in \textcolor<3>{blue}{Real-} und \textcolor<3>{red}{Imaginärteil}:
+    \begin{align*}
+        Re: \quad & \alpha^2 - \beta^2  = 0               \\
+        Im: \quad & -2 \alpha \beta  \,\,= -\omega \mu \sigma
+    \end{align*}}
+    
+    \uncover<4->{Wir erhalten zunächst $\beta = \dfrac{\omega\mu\sigma}{2\alpha}$.}
+
+\end{frame}
+
+\begin{frame}{Wurzeln von $k^2$}
+\uncover<1->{    Mit dem Zwischenergebnis $\beta = \frac{\omega\mu\sigma}{2\alpha}$ kehren wir zurück zum Realteil von $k^2$. Wir setzen ein:
+}
+    \begin{align*}
+        \uncover<1->{\alpha^2 - \left(\frac{\omega\mu\sigma}{2\alpha}\right)^2 & = 0}                                                             \\
+        \uncover<2->{\alpha^4 - \left(\frac{\omega\mu\sigma}{2}\right)^2       & = 0}                                                             \\
+        \uncover<3->{\alpha^2                                                  & = \textcolor<3>{red}{\pm} \frac{\omega\mu\sigma}{2} = \beta^2}                \\
+        \uncover<4->{\alpha                                                    & = \textcolor<5>{red}{\pm} \sqrt{\textcolor<4>{red}{+}\frac{\omega\mu\sigma}{2}} = \beta}
+    \end{align*}
+    \uncover<5->
+    {Die Entscheidung für das \textcolor<5>{red}{richtige Vorzeichen} fällt, wenn wir $\alpha$ und $\beta$ in die Lösung der eindimensionalen Helmholtzgleichung einsetzen.}
+\end{frame}
+
+\begin{frame}{Wurzeln von $k^2$}
+    \uncover<1->{Wir erinnern uns, dass $k = \pm (\alpha - i \beta)$.}
+
+    \uncover<2->{Es ist klar, dass in
+\begin{align*}
+    \vb{E}(z) & = \vb{E}(0) e^{- i k z}, \qquad i k = \pm i \alpha \pm \beta \\
+    \vb{E}(z) & = \vb{E}(0) e^{- i \alpha z} e^{- \beta z} 
+\end{align*}
+nur $\beta > 0$ das geforderte Verhalten $\vb{E}(z) \to 0$ für $z \to +\infty$ liefert.}
+
+\uncover<3->{$\beta$ bestimmt die Stärke des exponentiellen Abklingverhaltens von $\vb{E}(z)$ für $z \ge 0$, also die Dämpfung.}
+
+\uncover<4->{Welche Rolle spielt $\alpha$?}
+\end{frame}
+
+\begin{frame}{Wurzeln von $k^2$}
+\uncover<1->{    Zum Verständnis der Rolle von $\alpha$ müssen wir die Zeitabhängigkeit explizit in die Gleichung für $\vb{E}(z)$ aufnehmen:
+}
+\begin{align*}
+    \uncover<1->{\vb{E}(z) & = \vb{E}(0) e^{- i(\textcolor<2-3>{red}{\alpha z - \omega t}) } e^{- \beta z}} \\
+    \uncover<2->{\vb{E}(z) & = \vb{E}(0) e^{- i \textcolor<2-3>{red}{\varphi} } e^{- \beta z}}
+\end{align*}
+\uncover<3->{\textcolor<3>{red}{$\varphi$} ist ein Phasenwinkel und beschreibt den Zustand der Amplitude als Funktion von Ort ($z$) und Zeit ($t$):
+\begin{align*}
+    \alpha z - \omega t & = \varphi \\
+    z & = \frac{\varphi + \omega t}{\alpha}.
+\end{align*}
+}
+\uncover<4->
+{Daraus erhalten wir die Phasengeschwindigkeit
+\[
+    \dot z(t) = c = \frac{\omega}{\alpha}.
+\]}
+\end{frame}
+
+\begin{frame}{Wurzeln von $k^2$}
+\uncover<1->{Die Phasengeschwindigkeit
+$$
+c = \frac{\omega}{\textcolor<2>{red}{\alpha}} = \sqrt{\frac{2 \omega }{\mu \sigma}}
+$$
+besitzt nur für $\alpha > 0$ die Bedeutung der Geschwindigkeit einer sich in positiver $z$-Richtung ausbreitenden Welle.}
+
+\uncover<2->{Wir erkennen in $\alpha$ die \textcolor<2>{red}{Wellenzahl}.}
+
+\uncover<3->{Bemerkung: Für eine in negative $z$-Richtung laufende Welle kehren sowohl $\alpha$ als auch $\beta$ ihre Vorzeichen um!}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wurzeln von $k^2$}
+
+    Resultate:
+
+    \uncover<1->{Wir können einerseits aus $\beta$ die elektromagnetische Eindringtiefe $\tau$ berechnen: $\tau = \beta^{-1} = \sqrt{\dfrac{2}{\omega \mu \sigma}}$.}
+
+    \uncover<2->{Die Phasengeschwindigkeit können wir ebenfalls genau angeben: $c = \sqrt{\dfrac{2 \omega}{\mu \sigma}}$.}
+
+    \uncover<3->{Andererseits zeigt uns die Phasengeschwindigkeit aber auch, dass wir mit der quasistationären Näherung für $\sigma \to 0$ ein wichtiges physikalisches Gesetz ($c$ stets kleiner als Vakuumlichtgeschwindigkeit $c_0$) verletzen!}
+ 
 \end{frame}
 
 \end{document}
